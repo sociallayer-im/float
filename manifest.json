@@ -1,0 +1,61 @@
+{
+  "name": "Solas Float",
+  "version": "1.0",
+  "description": "Sociallayer Extension",
+  "manifest_version": 3,
+  "icons": {
+    "16": "icons/16.png",
+    "32": "icons/32.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": "icons/48.png",
+    "default_title": "Social layer",
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.twitter.com/*"
+      ],
+      "js": [
+        "config.js",
+        "/libs/axios.min.js",
+        "sola.js"
+      ],
+      "css": [
+        "sola.css"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches":[
+        "https://social-layer-app-dev.vercel.app/*",
+        "https://app.sociallayer.im/*",
+        "http://localhost:8080/*"
+      ],
+      "js": [
+        "login.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "storage"
+  ],
+  "homepage_url": "https://app.sociallayer.im/",
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "/images/*",
+        "/icons/*"
+      ],
+      "matches": [
+        "https://*.twitter.com/*"
+      ]
+    }
+  ]
+}

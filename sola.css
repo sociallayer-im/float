@@ -1,0 +1,213 @@
+.sola-loading {
+    display: none;
+}
+
+#Sola {
+    font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    position: relative;
+    background: rgba(241, 241, 241, 0);
+    border-radius: 12px;
+    min-height: 100px;
+    width: 100%;
+    padding: 0px;
+    box-sizing: border-box;
+    margin-top: 12px;
+    color: inherit;
+}
+
+#Sola.loading .sola-loading {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#Sola .sola-profile {
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: center;
+    color: inherit;
+}
+
+#Sola .sola-profile img {
+    width: 23px;
+    height: auto;
+    margin-right: 9px;
+}
+
+.sola-profile .sola-domain {
+    color: inherit;
+    background-size: 100% 5px;
+    background-position: left 16px;
+    background-repeat: no-repeat;
+    font-weight: 600;
+}
+
+#Sola .sola-badges {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 18px;
+}
+
+#Sola .sola-badges > a {
+    text-decoration: none;
+    color: inherit;
+    margin-right: 18px;
+    text-align: center;
+    width: 52px;
+    transition: all 0.2s;
+}
+
+#Sola .sola-badges > a:hover {
+    transform: translateY(-4px);
+}
+
+#Sola .sola-badges > a img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: block;
+    background: #fff;
+    margin-bottom: 6px;
+}
+
+#Sola .sola-badge-name {
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#Sola .sola-send-btn {
+    background: #9EFEDD;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    line-height: 28px;
+    height: 28px;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 12px;
+    color:#272928;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+#Sola .sola-send-btn:hover {
+    opacity: 0.8;
+}
+
+@media (prefers-color-scheme: dark) {
+    #Sola {
+        color: #fff
+    }
+}
+
+div[data-testid=tweetText] .sola-presend-card {
+    display: none;
+}
+
+div[data-testid=tweetText]:hover .sola-presend-card {
+    display: block;
+}
+
+.sola-presend-card {
+    white-space: initial;
+    width: 260px;
+    height: auto;
+    background-color: #fff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    border-radius: 19px;
+    position: fixed;
+    z-index: 9999;
+    padding: 20px;
+    box-sizing: border-box;
+    transform: translate(90%,-20%);
+
+}
+
+.sola-presend-card .has-login {
+    background-size:0;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.sola-presend-card .has-login.claimed {
+    background-size: 300px auto;
+}
+
+.sola-presend-card .has-login .check-btn {
+    display: none;
+}
+
+.sola-presend-card .has-login.claimed .check-btn {
+    display: block!important;
+}
+
+.sola-presend-card .has-login.claimed .claim-btn{
+    display: none;
+}
+
+.sola-presend-card .has-login .claim-text {
+    display: none;
+}
+
+.sola-presend-card .has-login.claimed .claim-text{
+    display: block;
+}
+
+.sola-presend-card .has-login .logo {
+    width: 123px;
+    height: 38px;
+}
+
+.sola-presend-card .badge-cover {
+    height: 90px;
+    width: 90px;
+    display: block;
+    margin: 10px auto 6px auto;
+    border-radius: 50%;
+}
+
+.sola-presend-card .badge-name {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sola-presend-card .claim-btn, .sola-presend-card .check-btn {
+    display: block;
+    width: calc(100% - 20px);
+    height: 32px;
+    background: #9EFEDD;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    color: #272928;
+    line-height: 30px;
+    margin: 0 auto;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+.sola-presend-card .claim-btn[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.sola-presend-card .has-login .claim-text {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px;
+}
