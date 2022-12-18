@@ -41,7 +41,8 @@ function waitForShow() {
 
     // getProfileByTwitterId(userId.innerHTML)
 
-     new Sola(hoverCard, userId.innerHTML)
+     var sola = new Sola(hoverCard, userId.innerHTML)
+    sola.show()
 }
 
 function waitForHide() {
@@ -62,11 +63,11 @@ function Sola(hoverCard, twitterId) {
     this.dom = null
     this.hoverCard = hoverCard
     this.twitterId = twitterId || ''
-    var that = this
-    getProfileByTwitterId(twitterId, function(err, profile) {
-        if (err) return
-        that.initDom(profile.domain)
-    })
+    // var that = this
+    // getProfileByTwitterId(twitterId, function(err, profile) {
+    //     if (err) return
+    //     that.initDom(profile.domain)
+    // })
 
     this.initDom = function (solaDomain) {
         this.dom = document.createElement('div')
@@ -195,7 +196,9 @@ function findPresend() {
             })
 
             // bind click event
-            card.querySelector('.claim-btn.loginin').addEventListener('click', function(e){
+            var claimBtn = card.querySelector('.claim-btn.loginin')
+            if (!claimBtn) return
+            claimBtn.addEventListener('click', function(e){
                 e.stopPropagation()
                 var claimBtn = card.querySelector('.claim-btn.loginin')
                 claimBtn.setAttribute('disabled', 'disabled')
